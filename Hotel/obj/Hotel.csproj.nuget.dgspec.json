@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Hotel\\Hotel\\Hotel.csproj": {}
+    "D:\\курсовая\\Hotel\\Hotel\\Hotel.csproj": {}
   },
   "projects": {
-    "D:\\Hotel\\Hotel\\Hotel.csproj": {
+    "D:\\курсовая\\Hotel\\Hotel\\Hotel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Hotel\\Hotel\\Hotel.csproj",
+        "projectUniqueName": "D:\\курсовая\\Hotel\\Hotel\\Hotel.csproj",
         "projectName": "Hotel",
-        "projectPath": "D:\\Hotel\\Hotel\\Hotel.csproj",
+        "projectPath": "D:\\курсовая\\Hotel\\Hotel\\Hotel.csproj",
         "packagesPath": "C:\\Users\\Ekaterina\\.nuget\\packages\\",
-        "outputPath": "D:\\Hotel\\Hotel\\obj\\",
+        "outputPath": "D:\\курсовая\\Hotel\\Hotel\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [
