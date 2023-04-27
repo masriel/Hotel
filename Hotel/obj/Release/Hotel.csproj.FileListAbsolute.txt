@@ -1,0 +1,7 @@
+D:\Hotel\Hotel\obj\Release\Hotel.csproj.AssemblyReference.cache
+D:\Hotel\Hotel\obj\Release\Hotel.csproj.SuggestedBindingRedirects.cache
+D:\Hotel\Hotel\obj\Release\Hotel.exe.config
+D:\Hotel\Hotel\obj\Release\MainWindow.baml
+D:\Hotel\Hotel\obj\Release\MainWindow.g.cs
+D:\Hotel\Hotel\obj\Release\Hotel_Content.g.cs
+D:\Hotel\Hotel\obj\Release\Hotel_MarkupCompile.cache

@@ -1,0 +1,112 @@
+﻿<Page x:Class="Hotel.pages.AddUser"        
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      Title="AddUser" Height="500" Width="550"
+      FontSize="18" FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid>
+        <Border Background="White" CornerRadius="10">
+            <Grid>
+                <Rectangle Height="420" VerticalAlignment="Center">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush EndPoint="0.5, 1"
+                                             StartPoint="0.5, 0">
+                            <GradientStop Color="#FFFFFF"/>
+                            <GradientStop Color="#c37d92" Offset="1.5"/>
+                            <GradientStop Color="#d89a9e" Offset="0.8"/>
+                            <GradientStop Color="#FFFFFF" Offset="0.999"/>
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <!--Icon-->
+                <materialDesign:PackIcon Kind="AccountAddOutline"
+                                         Width="100" Height="100"
+                                         VerticalAlignment="Top"
+                                         HorizontalAlignment="Center"
+                                         Opacity="0.4"
+                                         Margin="20"/>
+                <!--Close button-->
+                <Button x:Name="CloseBut"
+                        ToolTip="Icon"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Right"
+                        BorderThickness="0"
+                        Background="Transparent"
+                        Width="40"
+                        Height="40"
+                        Opacity="0.4"
+                        Click="CloseBut_OnClick">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Content" Value="{materialDesign:PackIcon Kind=Close}"/>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <!--Inputs-->
+                <StackPanel Margin="80 110 80 20">
+                    <TextBox x:Name="UsernameBox"
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            materialDesign:HintAssist.Hint="Username"
+                            materialDesign:HintAssist.FloatingOffset="0, -20"
+                            BorderBrush="#aeb4a9"
+                            Margin="10 10 10 0"
+                            BorderThickness=" 0 0 0 1.5"
+                            PreviewTextInput="UsernameBox_OnPreviewTextInput"/>
+                    <TextBox x:Name="LoginBox"
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            materialDesign:HintAssist.Hint="Login"
+                            materialDesign:HintAssist.FloatingOffset="0, -20"
+                            BorderBrush="#aeb4a9"
+                            Margin="10 10 10 0"
+                            BorderThickness=" 0 0 0 1.5"
+                            PreviewTextInput="LoginBox_OnPreviewTextInput"/>
+                    <PasswordBox x:Name="PasswdBox" 
+                                Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
+                                materialDesign:HintAssist.Hint="Password"
+                                materialDesign:HintAssist.FloatingOffset="0, -18"
+                                BorderBrush="#aeb4a9"
+                                BorderThickness=" 0 0 0 1.5"
+                                Margin="10"
+                                PreviewTextInput="LoginBox_OnPreviewTextInput"/>
+                    <Button x:Name="GeneratePwd"
+                        ToolTip="Icon"
+                        Margin="10 0"
+                        HorizontalAlignment="Left"
+                        BorderThickness="0"
+                        Background="Transparent"
+                        Width="30"
+                        Height="30"
+                        Opacity="0.4"
+                        Click="GeneratePwd_OnClick">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Content" Value="{materialDesign:PackIcon Kind=Sync}"/>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                    <Button x:Name="SignInBut" Content="Зарегистрировать"
+                            Background="#aeb4a9"
+                            Foreground="White"
+                            Margin="10 10"
+                            FontSize="18"
+                            Height="40"
+                            BorderThickness="0"
+                            materialDesign:ButtonAssist.CornerRadius="22"
+                            Click="SignInBut_OnClick"/>
+                    <Button x:Name="UserDbBut" Content="Управление пользователями"
+                            Background="#aeb4a9"
+                            Foreground="White"
+                            Margin="10"
+                            FontSize="16"
+                            Height="40"
+                            BorderThickness="0"
+                            materialDesign:ButtonAssist.CornerRadius="22"
+                            Click="UserDBBut_OnClick"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

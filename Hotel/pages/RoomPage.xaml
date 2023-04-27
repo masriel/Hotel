@@ -1,0 +1,151 @@
+﻿<Page x:Class="Hotel.pages.RoomPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      Title="RoomPage" Height="745" Width="1045"
+      FontSize="18" FontFamily="{DynamicResource MaterialDesignFont}"
+      Loaded="RoomPage_OnLoaded">
+    <Grid>
+        <Border Background="White" CornerRadius="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.08*"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="1.95*"/>
+                </Grid.ColumnDefinitions>
+                <Ellipse Width="300"
+                             Height="300"
+                             VerticalAlignment="Bottom"
+                             Fill="#e0c1c3"
+                             Margin="-94,0,80,-112"
+                             Opacity="0.3" Grid.Row="1"/>
+                <Ellipse Width="400"
+                             Height="400"
+                             VerticalAlignment="Bottom"
+                             Fill="#e0b1c3"
+                             Margin="261,0,-102,-112"
+                             Opacity="0.6" Grid.Column="1" Grid.Row="1"/>
+                <Ellipse Width="250"
+                             Height="250"
+                             VerticalAlignment="Bottom"
+                             Fill="#e1c1b9"
+                             Margin="124,0,471,-167"
+                             Opacity="0.5" Grid.ColumnSpan="2" Grid.Row="1"/>
+                <Ellipse Width="400"
+                             Height="400"
+                             VerticalAlignment="Bottom"
+                             Fill="#e1b9b9"
+                             Margin="211,0,234,-228"
+                             Opacity="0.8" Grid.ColumnSpan="2" Grid.Row="1"/>
+                <DockPanel Grid.Row="0" Grid.ColumnSpan="2">
+                    <TextBlock Text="Номера гостиницы"
+                               FontWeight="Bold"
+                               FontSize="25" Foreground="#846267"
+                               Margin="10 0 10 0"
+                               VerticalAlignment="Center"/>
+                    <Button x:Name="ReturnBut"
+                            Click="ReturnBut_OnClick"
+                            ToolTip="Icon"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Right"
+                            BorderThickness="0"
+                            Margin="10 0"
+                            Background="Transparent"
+                            Width="38" Height="38"
+                            Opacity="0.4">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Content" Value="{materialDesign:PackIcon Kind=ArrowBack}"/>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </DockPanel>
+                <DataGrid x:Name="RoomDG" MouseDoubleClick="RoomDG_OnMouseDoubleClick"
+                          Grid.Row="1" Grid.Column="1"
+                          Background="Transparent"
+                          Margin="10" CanUserResizeColumns="False"
+                          GridLinesVisibility="Vertical" IsReadOnly="True"
+                          VerticalGridLinesBrush="#FF846267"
+                          SelectionMode="Single" FontSize="15.8"/>
+                <StackPanel Grid.Row="1" Grid.Column="0" Margin="10"
+                            VerticalAlignment="Center">
+                    <TextBox x:Name="NameBox"
+                        Margin="5 0 5 20" 
+                        PreviewTextInput="NameBox_OnPreviewTextInput"
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        materialDesign:HintAssist.Hint="Название номера"
+                        materialDesign:HintAssist.FloatingOffset="0, -20"
+                        BorderBrush="#aeb4a9"
+                        BorderThickness=" 0 0 0 1.5"/>
+                    <TextBox x:Name="AreaBox"
+                        Margin="5 20" PreviewTextInput="AreaBox_OnPreviewTextInput"
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        materialDesign:HintAssist.Hint="Площадь"
+                        materialDesign:HintAssist.FloatingOffset="0, -20"
+                        BorderBrush="#aeb4a9"
+                        BorderThickness=" 0 0 0 1.5"/>
+                    <ComboBox x:Name="VisitQuant"
+                        BorderBrush="#aeb4a9" Margin="5 20"
+                        materialDesign:HintAssist.Hint="Кол-во посетителей"
+                        Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                        <ComboBoxItem Content="1"/>
+                        <ComboBoxItem Content="2"/>
+                        <ComboBoxItem Content="3"/>
+                        <ComboBoxItem Content="4"/>
+                        <ComboBoxItem Content="5"/>
+                    </ComboBox>
+                    <TextBox x:Name="CostBox"
+                        Margin="5 20" PreviewTextInput="AreaBox_OnPreviewTextInput" 
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        materialDesign:HintAssist.Hint="Стоимость за ночь"
+                        materialDesign:HintAssist.FloatingOffset="0, -20"
+                        BorderBrush="#aeb4a9"
+                        BorderThickness=" 0 0 0 1.5"/>
+                    <ComboBox x:Name="AvailableQuant"
+                        BorderBrush="#aeb4a9" Margin="5 20"
+                        materialDesign:HintAssist.Hint="Свободных номеров"
+                        Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                        <ComboBoxItem Content="1"/>
+                        <ComboBoxItem Content="2"/>
+                        <ComboBoxItem Content="3"/>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10"
+                            Grid.Row="1" Grid.Column="0" 
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom">
+                    <materialDesign:PackIcon x:Name="ExpBut" Margin="5"
+                                             MouseLeftButtonDown="ExpBut_OnMouseLeftButtonDown"
+                                             VerticalAlignment="Center"
+                                             Kind="ExportVariant" Cursor="Hand"
+                                             Height="35" Width="35"
+                                             Opacity="0.4"/>
+                    <materialDesign:PackIcon x:Name="DoneBut" Margin="5"
+                                             MouseLeftButtonDown="DoneBut_OnMouseLeftButtonDown"
+                                             VerticalAlignment="Center"
+                                             Kind="Done" Cursor="Hand"
+                                             Height="35" Width="35"
+                                             Opacity="0.4"/>
+                    <materialDesign:PackIcon x:Name="AddBut" Margin="5"
+                                            MouseLeftButtonDown="AddBut_OnMouseLeftButtonDown"
+                                            VerticalAlignment="Center"
+                                            Kind="Add" Cursor="Hand"
+                                            Height="35" Width="35"
+                                            Opacity="0.4"/>
+                    <materialDesign:PackIcon x:Name="DeleteBut" Margin="5"
+                                             MouseLeftButtonDown="DeleteBut_OnMouseLeftButtonDown"
+                                            VerticalAlignment="Center"
+                                            Kind="Delete" Cursor="Hand"
+                                            Height="35" Width="35"
+                                            Opacity="0.4"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

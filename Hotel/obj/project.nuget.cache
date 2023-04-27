@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "q+VgeUsDaAG4aHmvgi4b2wm1EcQwP2xKX58RpzY+XkETrWksCM9bQwMZtCzAVU1RwWiIE+iQFeXqp4uHcQ6L0Q==",
+  "success": true,
+  "projectFilePath": "D:\\Hotel\\Hotel\\Hotel.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ekaterina\\.nuget\\packages\\materialdesigncolors\\2.0.6\\materialdesigncolors.2.0.6.nupkg.sha512",
+    "C:\\Users\\Ekaterina\\.nuget\\packages\\materialdesignthemes\\4.5.0\\materialdesignthemes.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
