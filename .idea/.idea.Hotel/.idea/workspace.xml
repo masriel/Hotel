@@ -8,29 +8,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24fbd62d-cd9f-466b-9839-212fa018169a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Hotel/classes/BackUpSql.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/Hotel.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/Hotel.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/classes/MySql.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/classes/MySql.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/obj/Debug/App.baml" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/obj/Debug/App.baml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/obj/Debug/App.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/obj/Debug/App.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/obj/Debug/App.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/obj/Debug/App.g.i.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/obj/Debug/Hotel.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/obj/Debug/Hotel.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/obj/Debug/MainWindow.baml" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/obj/Debug/MainWindow.baml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/obj/Debug/MainWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/obj/Debug/MainWindow.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/obj/Debug/MainWindow.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/obj/Debug/MainWindow.g.i.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/obj/Debug/pages/MainPage.baml" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/obj/Debug/pages/MainPage.baml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/obj/Debug/pages/MainPage.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/obj/Debug/pages/MainPage.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/obj/Debug/pages/MainPage.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/obj/Debug/pages/MainPage.g.i.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/pages/AllBookingPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/pages/AllBookingPage.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/pages/AllBookingPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/pages/AllBookingPage.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/pages/Authorization.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/pages/Authorization.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Hotel/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hotel/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel/bin/Debug/Hotel.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/bin/Debug/Hotel.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel/bin/Debug/Hotel.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/bin/Debug/Hotel.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel/obj/Debug/Hotel.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/obj/Debug/Hotel.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel/obj/Debug/Hotel.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/obj/Debug/Hotel.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hotel/pages/Booking.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/pages/Booking.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hotel/pages/ClientPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/pages/ClientPage.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/pages/MainPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/pages/MainPage.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hotel/pages/MainPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/pages/MainPage.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/pages/RoomPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/pages/RoomPage.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/pages/UserDataBase.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/pages/UserDataBase.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotel/pages/UserDataBase.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/pages/UserDataBase.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +91,12 @@
       <workItem from="1682348632016" duration="1471000" />
       <workItem from="1682350126978" duration="339000" />
       <workItem from="1682350819233" duration="4010000" />
+      <workItem from="1682620510621" duration="345000" />
+      <workItem from="1682841052173" duration="33000" />
+      <workItem from="1682841094714" duration="222000" />
+      <workItem from="1682845255421" duration="3828000" />
+      <workItem from="1682937090067" duration="1208000" />
+      <workItem from="1682938401333" duration="3809000" />
     </task>
     <task id="LOCAL-00001" summary="okAy.......">
       <created>1681920510417</created>
@@ -114,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681920510417</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fix export problem">
+      <created>1682620804345</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1682620804345</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,6 +122,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="okAy......." />
-    <option name="LAST_COMMIT_MESSAGE" value="okAy......." />
+    <MESSAGE value="fix export problem" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix export problem" />
   </component>
 </project>

@@ -96,6 +96,8 @@ namespace Hotel.pages
             }
         }
 
+        #region Контроль ввода данных
+
         private void SurnameBox_OnPreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             if (!(Char.IsLetter(e.Text, 0)))
@@ -125,6 +127,7 @@ namespace Hotel.pages
             if (PhoneBox.Text.Length >= 11 || !(Char.IsDigit(e.Text, 0)))
                 e.Handled = true;
         }
+        #endregion
 
         private void DeleteBut_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {

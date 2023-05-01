@@ -59,7 +59,7 @@ namespace Hotel.pages
             LoadData("SELECT * FROM hotel.room;");
         }
 
-        public void LoadData(string query)
+        private void LoadData(string query)
         {
             try
             {
@@ -92,7 +92,7 @@ namespace Hotel.pages
             LoadData(GetQuery());
         }
 
-        public string GetQuery()
+        private string GetQuery()
         {
             string sql = String.Empty;
 

@@ -139,7 +139,7 @@ namespace Hotel.pages
             FillRoomBox(ForBooking.NumVis);
         }
 
-        public void FillRoomBox(int numOfVis)
+        private void FillRoomBox(int numOfVis)
         {
             string fillQuery = $"SELECT * FROM hotel.room WHERE visitors_quant >= {numOfVis} AND available_quant >=1 ORDER BY cost ASC;";
             try
@@ -166,7 +166,7 @@ namespace Hotel.pages
             
         }
 
-        public double GetDays(DateTime start, DateTime end)
+        private static double GetDays(DateTime start, DateTime end)
         {
             double days = Math.Floor((end - start).TotalDays);
             return days;
@@ -209,7 +209,7 @@ namespace Hotel.pages
             }
         }
 
-        public void calcCost()
+        private void calcCost()
         {
             _totalCost = _roomCost + _foodCost;
             AllSum.Text = _totalCost.ToString(CultureInfo.CurrentCulture);
@@ -282,12 +282,12 @@ namespace Hotel.pages
                 {
                     string updateRoomInfo = $"UPDATE hotel.room SET available_quant = {quantRoom - 1} WHERE NUMroom = {_numroom};";
                     classes.MySql.AddCommand(updateRoomInfo);
-                    //CreateWordDocCheque();
+                    CreateWordDocCheque();
                 }
                 else
                 {
                     MessageBox.Show("Бронирование (возможно другой код)");
-                    //CreateWordDocBooking();
+                    CreateWordDocBooking();
                 }
                 #endregion
             }
