@@ -4,18 +4,18 @@ namespace Hotel.classes
 {
     public class CalcAge
     {
-        static DateTime BYear;
-        static DateTime NowYear = DateTime.Today;
+        static DateTime _bYear;
+        static DateTime _nowYear = DateTime.Today;
 
         public CalcAge(string byear)
         {
-            BYear = Convert.ToDateTime(byear);
+            _bYear = Convert.ToDateTime(byear);
         }
 
         public int Age()
         {
-            int age = NowYear.Year - BYear.Year;
-            if (BYear > NowYear.AddYears(-age)) age--;
+            int age = _nowYear.Year - _bYear.Year;
+            if (_bYear > _nowYear.AddYears(-age)) age--;
 
             return age;
         }

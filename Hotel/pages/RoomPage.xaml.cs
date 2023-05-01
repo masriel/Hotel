@@ -19,6 +19,7 @@ namespace Hotel.pages
             InitializeComponent();
         }
 
+        //загрузка данных из базы
         private void LoadDb(string query)
         {
             try
@@ -41,6 +42,7 @@ namespace Hotel.pages
             }
         }
         
+        //кнопка возвращения в главное меню
         private void ReturnBut_OnClick(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Хотите закрыть панель управления гостиничными номерами?", "ВЫХОД", MessageBoxButton.YesNo, MessageBoxImage.Question);
@@ -50,6 +52,7 @@ namespace Hotel.pages
             }
         }
 
+        //получение ID выбранной строки 
         private void RoomDG_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             _checkedStr = true;
@@ -107,6 +110,7 @@ namespace Hotel.pages
         
         #endregion
 
+        //обновление данных в базе
         private void DoneBut_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if(_checkedStr == false)
@@ -143,6 +147,7 @@ namespace Hotel.pages
             }
         }
 
+        //добавление новой записи в базу
         private void AddBut_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if(_checkedStr)
@@ -191,6 +196,7 @@ namespace Hotel.pages
             }
         }
 
+        //удаление выбранной записи
         private void DeleteBut_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if(_checkedStr == false)
@@ -227,11 +233,13 @@ namespace Hotel.pages
             }
         }
 
+        //загрузка формы
         private void RoomPage_OnLoaded(object sender, RoutedEventArgs e)
         {
             LoadDb("SELECT NUMroom AS '№', r_name AS 'Название', area AS 'Площадь', visitors_quant AS 'Посетителей', cost AS 'Стоимость', available_quant AS 'Свободных' FROM hotel.room;");
         }
 
+        //эскпорт данных
         private void ExpBut_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             try

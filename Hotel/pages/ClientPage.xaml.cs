@@ -12,7 +12,11 @@ namespace Hotel.pages
     public partial class ClientPage
     {
         private readonly DataTable _table = new DataTable();
+        
+        //ID
         private int _id;
+        
+        //проверка на выбранную строку
         private bool _checkedStr;
         
         public ClientPage()
@@ -20,6 +24,7 @@ namespace Hotel.pages
             InitializeComponent();
         }
 
+        //загрузка данных из базы
         private void LoadDb(string query)
         {
             try
@@ -41,11 +46,13 @@ namespace Hotel.pages
             }
         }
 
+        //поиск
         private void SearchBox_OnTextChanged(object sender, TextChangedEventArgs e)
         {
             LoadDb(String.Format("SELECT surname AS 'Фамилия', name AS 'Имя', patronymic AS 'Отчество', SUBSTRING(birth_date, 1, 10) AS 'ДатаРождения', age AS 'Возраст', phone_number AS 'Телефон', passport_series AS 'Серия', passport_number AS 'Номер', SUBSTRING(date_of_issue, 1, 10) AS 'ДатаВыдачи' FROM hotel.client WHERE surname LIKE '%{0}%';", SearchBox.Text));
         }
 
+        //кнопка возвращения в главное меню
         private void ReturnBut_OnClick(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Хотите закрыть панель управления клиентами?", "ВЫХОД", MessageBoxButton.YesNo, MessageBoxImage.Question);
@@ -55,6 +62,7 @@ namespace Hotel.pages
             }
         }
 
+        //получение ID выбранной строки в базе
         private void ClientDG_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             _checkedStr = true;
@@ -129,6 +137,7 @@ namespace Hotel.pages
         }
         #endregion
 
+        //удаление выбранной строку из базы
         private void DeleteBut_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (_checkedStr == false)
@@ -168,6 +177,7 @@ namespace Hotel.pages
             }
         }
 
+        //обновление данных в базе
         private void DoneBut_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (_checkedStr == false)
@@ -218,6 +228,7 @@ namespace Hotel.pages
             }
         }
 
+        //экспорт данных
         private void ExpBut_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             try
@@ -256,6 +267,7 @@ namespace Hotel.pages
             }
         }
 
+        //загрузка формы
         private void ClientPage_OnLoaded(object sender, RoutedEventArgs e)
         {
             LoadDb("SELECT surname AS 'Фамилия', name AS 'Имя', patronymic AS 'Отчество', SUBSTRING(birth_date, 1, 10) AS 'ДатаРождения', age AS 'Возраст', phone_number AS 'Телефон', passport_series AS 'Серия', passport_number AS 'Номер', SUBSTRING(date_of_issue, 1, 10) AS 'ДатаВыдачи' FROM hotel.client;");

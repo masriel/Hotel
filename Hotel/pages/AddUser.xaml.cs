@@ -11,6 +11,7 @@ namespace Hotel.pages
             InitializeComponent();
         }
         
+        //закрытие формы
         private void CloseBut_OnClick(object sender, RoutedEventArgs e)
         {
             var result = MessageBox.Show("Хотите вернуться в главное меню?", "ВЫХОД", MessageBoxButton.YesNo, MessageBoxImage.Question);
@@ -20,6 +21,8 @@ namespace Hotel.pages
             }
         }
 
+        #region Контроль ввода данных
+        
         private void UsernameBox_OnPreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             if(!(char.IsLetter(e.Text, 0) || (e.Text == ".")))
@@ -31,12 +34,16 @@ namespace Hotel.pages
             if (e.Text == "'")
                 e.Handled = true;
         }
+        
+        #endregion
 
+        //генерация пароля
         private void GeneratePwd_OnClick(object sender, RoutedEventArgs e)
         {
             PasswdBox.Password = GenerateRwd.GeneratePasswd();
         }
 
+        //кнопка добавления нового пользователя
         private void SignInBut_OnClick(object sender, RoutedEventArgs e)
         {
             string username = UsernameBox.Text;
@@ -66,6 +73,7 @@ namespace Hotel.pages
             }
         }
 
+        //кнопка перехода на форму "База данных пользователей"
         private void UserDBBut_OnClick(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new UserDataBase());

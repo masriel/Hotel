@@ -11,11 +11,23 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Hotel/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hotel/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hotel/bin/Debug/Hotel.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/bin/Debug/Hotel.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hotel/bin/Debug/Hotel.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/bin/Debug/Hotel.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel/classes/BackUpSql.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/classes/BackUpSql.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel/classes/CalcAge.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/classes/CalcAge.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel/classes/ForBooking.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/classes/ForBooking.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel/classes/GetHashPasswd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/classes/GetHashPasswd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel/classes/MySql.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/classes/MySql.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel/classes/WhichUserType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/classes/WhichUserType.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hotel/obj/Debug/Hotel.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/obj/Debug/Hotel.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hotel/obj/Debug/Hotel.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/obj/Debug/Hotel.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel/pages/AddUser.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/pages/AddUser.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel/pages/AllBookingPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/pages/AllBookingPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel/pages/Authorization.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/pages/Authorization.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hotel/pages/Booking.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/pages/Booking.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hotel/pages/ClientPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/pages/ClientPage.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hotel/pages/MainPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/pages/MainPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel/pages/RoomPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/pages/RoomPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel/pages/UserDataBase.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel/pages/UserDataBase.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/листинг.docx" beforeDir="false" afterPath="$PROJECT_DIR$/doc/листинг.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,6 +109,7 @@
       <workItem from="1682845255421" duration="3828000" />
       <workItem from="1682937090067" duration="1208000" />
       <workItem from="1682938401333" duration="3809000" />
+      <workItem from="1682965343763" duration="3598000" />
     </task>
     <task id="LOCAL-00001" summary="okAy.......">
       <created>1681920510417</created>

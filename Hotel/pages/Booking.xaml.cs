@@ -8,20 +8,21 @@ using System.Windows.Input;
 using Hotel.classes;
 
 using MySql.Data.MySqlClient;
-//using word = Microsoft.Office.Interop.Word;
+using word = Microsoft.Office.Interop.Word;
 
 namespace Hotel.pages
 {
     public partial class Booking
     {
+        //переменные для создания документа Word
         private readonly string _clientProfile = Directory.GetCurrentDirectory() + @"\template\ClientProfile.docx";
         private readonly string _booking = Directory.GetCurrentDirectory() + @"\template\BookingConfirmation.docx";
         private readonly string _cheque = Directory.GetCurrentDirectory() + @"\template\Cheque.docx";
 
+        //ID
         private double _totalCost, _foodCost;
         private double _roomCost, _numDays;
         private string _nameRoom = string.Empty;
-
         private int _idfeed, _idclient, _numroom, _age;
 
         public Booking()
@@ -29,12 +30,13 @@ namespace Hotel.pages
             InitializeComponent();
         }
 
-        /*private void ReplaceWordStub(string stubToReplace, string text, word.Document wordDocument)
+        //замена слов в документе
+        private void ReplaceWordStub(string stubToReplace, string text, word.Document wordDocument)
         {
             var range = wordDocument.Content;
             range.Find.ClearFormatting();
             range.Find.Execute(FindText: stubToReplace, ReplaceWith: text);
-        }*/
+        }
 
         #region Формирование документа "Анкета клиента"
         
@@ -53,7 +55,7 @@ namespace Hotel.pages
 
             try
             {
-                /*var wordApp = new word.Application();
+                var wordApp = new word.Application();
                 wordApp.Visible = false;
                 var wordDoc = wordApp.Documents.Open(_clientProfile);
 
@@ -69,7 +71,7 @@ namespace Hotel.pages
                 ReplaceWordStub("<departuredate>", depDate, wordDoc);
                 ReplaceWordStub("<dateissue>", issueDate, wordDoc);
 
-                wordApp.Visible = true;*/
+                wordApp.Visible = true;
             }
             catch(Exception ex)
             {
@@ -79,6 +81,7 @@ namespace Hotel.pages
         
         #endregion
 
+        //закрытие формы
         private void CloseBut_OnClick(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Вернуться на главное в меню?", "ВЫХОД", MessageBoxButton.YesNo, MessageBoxImage.Question);
@@ -127,6 +130,7 @@ namespace Hotel.pages
 
         #endregion
         
+        //загрузка формы
         private void Booking_OnLoaded(object sender, RoutedEventArgs e)
         {
             ArrivalDate.SelectedDate = DateTime.Parse(ForBooking.DataArriv);
@@ -139,6 +143,7 @@ namespace Hotel.pages
             FillRoomBox(ForBooking.NumVis);
         }
 
+        //заполнение элемента ComboBox
         private void FillRoomBox(int numOfVis)
         {
             string fillQuery = $"SELECT * FROM hotel.room WHERE visitors_quant >= {numOfVis} AND available_quant >=1 ORDER BY cost ASC;";
@@ -166,12 +171,14 @@ namespace Hotel.pages
             
         }
 
+        //расчет количества дней прожимания
         private static double GetDays(DateTime start, DateTime end)
         {
             double days = Math.Floor((end - start).TotalDays);
             return days;
         }
 
+        //выбор "Питания"
         private void Food_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             switch (Food.SelectedIndex)
@@ -194,6 +201,7 @@ namespace Hotel.pages
             }
         }
 
+        //выбор "Номера"
         private void Room_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string[] Cost = Room.SelectedItem.ToString().Split(' ', '(');
@@ -209,17 +217,20 @@ namespace Hotel.pages
             }
         }
 
+        //расчет итоговой суммы
         private void calcCost()
         {
             _totalCost = _roomCost + _foodCost;
             AllSum.Text = _totalCost.ToString(CultureInfo.CurrentCulture);
         }
         
+        //кнопка "Расчитать"
         private void CalcCost_OnClick(object sender, RoutedEventArgs e)
         {
             calcCost();
         }
 
+        //оформление заселения/брони, добавление данных в базу
         private void CheckIntoRoomBut_OnClick(object sender, RoutedEventArgs e)
         {
             if (Surname.Text == "" || _Name.Text == "" || Patr.Text == "" || Birthday.Text == "" ||
@@ -293,6 +304,8 @@ namespace Hotel.pages
             }
         }
 
+        #region Формирование документа "Подтверждение брони"
+        
         private void CreateWordDocBooking()
         {
             string surname = Surname.Text;
@@ -308,7 +321,7 @@ namespace Hotel.pages
 
             try
             {
-                /*var wordApp = new word.Application();
+                var wordApp = new word.Application();
                 wordApp.Visible = false;
                 var wordDoc = wordApp.Documents.Open(_booking);
 
@@ -327,14 +340,18 @@ namespace Hotel.pages
                 ReplaceWordStub("<room>", room, wordDoc);
                 ReplaceWordStub("<days>", nights, wordDoc);
 
-                wordApp.Visible = true;*/
+                wordApp.Visible = true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "ОШИБКА");
             }
         }
+        
+        #endregion
 
+        #region Формирование документа "Чек о заселении"
+        
         private void CreateWordDocCheque()
         {
             string client = $"{Surname.Text} {_Name.Text} {Patr.Text}";
@@ -351,7 +368,7 @@ namespace Hotel.pages
             
             try
             {
-                /*var wordApp = new word.Application();
+                var wordApp = new word.Application();
                 wordApp.Visible = false;
                 var wordDoc = wordApp.Documents.Open(_booking);
 
@@ -367,12 +384,14 @@ namespace Hotel.pages
                 ReplaceWordStub("<cost_room>", amount, wordDoc);
                 ReplaceWordStub("<cost_feed>", regNum, wordDoc);
 
-                wordApp.Visible = true;*/
+                wordApp.Visible = true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "ОШИБКА");
             }
         }
+        
+        #endregion
     }
 }

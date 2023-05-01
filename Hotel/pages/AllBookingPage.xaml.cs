@@ -11,13 +11,14 @@ namespace Hotel.pages
 {
     public partial class AllBookingPage
     {
-        
+        //переменные для пагинации
         private int _curPage = 1, _allPages = 0, _limit = 2, _allLines = 0, _startLine = 0;
         public AllBookingPage()
         {
             InitializeComponent();
         }
 
+        //загрузка формы
         private void AllBookingPage_OnLoaded(object sender, RoutedEventArgs e)
         {
             string q = $"SELECT reg_num, arrival_date, departure_date, (select surname from hotel.client where hotel.client.IDclient = booking.IDclient) as resident, (select r_name from hotel.room where room.NUMroom = booking.NUMroom) as room, (select area from hotel.room where room.NUMroom = booking.NUMroom) as area,(select cost from hotel.room where room.NUMroom = booking.NUMroom) as cost, count_day, (select f_name from hotel.feed where feed.IDfeed = booking.IDfeed) as feed, amount FROM hotel.booking LIMIT {_limit} OFFSET {_startLine};";
@@ -28,6 +29,7 @@ namespace Hotel.pages
             AllPage.Text = _allPages.ToString();
         }
 
+        //загрузка данных из базы, отображение в ItemsControl
         private void LoadData(string query)
         {
             try
@@ -62,6 +64,7 @@ namespace Hotel.pages
             }
         }
 
+        //получение количество строк в базе данных
         private int CountRow()
         {
             int lines = 0;
@@ -82,6 +85,7 @@ namespace Hotel.pages
             return lines;
         }
 
+        //закрытие формы
         private void CloseBut_OnClick(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Хотите вернуться на главное меню?", "ВЫХОД", MessageBoxButton.YesNo, MessageBoxImage.Question);
@@ -91,6 +95,7 @@ namespace Hotel.pages
             }
         }
 
+        //элемент пагинации, переход на предыдущую страницу
         private void PreviousPage_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             
@@ -105,6 +110,7 @@ namespace Hotel.pages
             }
         }
 
+        //элемент пагинации, переход на следующую страницу
         private void NextPage_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             

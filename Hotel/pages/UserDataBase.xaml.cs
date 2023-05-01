@@ -19,6 +19,7 @@ namespace Hotel.pages
             InitializeComponent();
         }
 
+        //загрузка данных из базы
         private void LoadDb()
         {
             try
@@ -39,11 +40,14 @@ namespace Hotel.pages
                 MessageBox.Show(ex.Message, "ОШИБКА", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+        
+        //кнопка возвращения на главную формы
         private void ReturnBut_OnClick(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new AddUser());
         }
 
+        //закрытие формы
         private void CloseBut_OnClick(object sender, RoutedEventArgs e)
         {
             var result = MessageBox.Show("Хотите вернуться в главное меню?", "ВЫХОД", 
@@ -54,6 +58,7 @@ namespace Hotel.pages
             }
         }
 
+        //получение ID выбранной строки
         private void DataUser_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             var login = _table.DefaultView[DataUser.SelectedIndex]["LOGIN"];
@@ -83,11 +88,13 @@ namespace Hotel.pages
             }
         }
 
+        //генерация пароля
         private void GeneratePwd_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             PasswdBox.Password = GenerateRwd.GeneratePasswd();
         }
 
+        //удаление записи из базы
         private void DeleteBut_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             try
@@ -116,6 +123,7 @@ namespace Hotel.pages
             PasswdBox.Clear();
         }
 
+        //обновление данных в базе
         private void DoneBut_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (UsernameBox.Text == String.Empty || LoginBox.Text == String.Empty)
@@ -153,11 +161,13 @@ namespace Hotel.pages
             }
         }
 
+        //загрузка формы
         private void UserDataBase_OnLoaded(object sender, RoutedEventArgs e)
         {
             LoadDb();
         }
 
+        //экспорт данных
         private void ExpBut_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             try

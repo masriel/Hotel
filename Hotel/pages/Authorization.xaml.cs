@@ -15,6 +15,7 @@ namespace Hotel.pages
             InitializeComponent();
         }
 
+        //закрытие формы
         private void CloseBut_OnClick(object sender, RoutedEventArgs e)
         {
             MessageBoxResult askExit = MessageBox.Show("Вы хотите выйти из приложения \"Гостиница\"?", "ВЫХОД ИЗ ПРИЛОЖЕНИЯ", MessageBoxButton.YesNo, MessageBoxImage.Question);
@@ -25,6 +26,7 @@ namespace Hotel.pages
             }
         }
 
+        //кнопка авторизации, проверка введенных данных
         private void LogInBut_OnClick(object sender, RoutedEventArgs e)
         {
             if(Login.Text == "" && (Passwd.Password == "" || RepeatPasswd.Password == ""))

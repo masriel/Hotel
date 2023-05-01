@@ -18,6 +18,7 @@ namespace Hotel.pages
             InitializeComponent();
         }
 
+        //закрытие приложения, создание Backup
         private void CLoseBut_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult AskExit = MessageBox.Show("Вы хотите выйти из приложения \"Гостиница\"?", "ВЫХОД ИЗ ПРИЛОЖЕНИЯ", MessageBoxButton.YesNo, MessageBoxImage.Question);
@@ -28,6 +29,7 @@ namespace Hotel.pages
             }
         }
 
+        //кнопка "Выход из аккаунта"
         private void LogOutBut_Click(object sender, RoutedEventArgs e)
         {
             var result = MessageBox.Show("Хотите выйти из аккаунта?", "ВЫХОД ИЗ АККАУНТА", MessageBoxButton.YesNo, MessageBoxImage.Question);
@@ -37,11 +39,13 @@ namespace Hotel.pages
             }
         }
 
+        //кнопка панели администратора
         private void AdminPanel_Click(object sender, RoutedEventArgs e)
         {
             Panel.IsOpen = true;
         }
 
+        //загрузка формы
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             classes.MySql.Connection.Close();
@@ -59,6 +63,7 @@ namespace Hotel.pages
             LoadData("SELECT * FROM hotel.room;");
         }
 
+        //загрузка данных из базы
         private void LoadData(string query)
         {
             try
@@ -87,11 +92,13 @@ namespace Hotel.pages
             }
         }
 
+        //поиск
         private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             LoadData(GetQuery());
         }
 
+        //получение запроса в базу данных
         private string GetQuery()
         {
             string sql = String.Empty;
@@ -127,22 +134,25 @@ namespace Hotel.pages
 
             return sql += ";";
         }
-
+        
         private void _SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             LoadData(GetQuery());
         }
         
+        //кнопка "Добавление пользователя"
         private void AddUserBut_OnClick(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new AddUser());
         }
 
+        //кнопка "Клиенты"
         private void ClientBut_OnClick(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new ClientPage());
         }
 
+        //кнопка "Оформить/Бронировать"
         private void But_OnClick(object sender, RoutedEventArgs e)
         {
             if (ArrivalDate.SelectedDate > DepartureDate.SelectedDate)
@@ -163,22 +173,26 @@ namespace Hotel.pages
             }
         }
 
+        //кнопка "Номера"
         private void RoomBut_OnClick(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new RoomPage());
         }
 
+        //контроль даты заезда
         private void ArrivalDate_OnSelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             if (ArrivalDate.SelectedDate > DateTime.Now) But.Content = "Бронировать";
             else But.Content = "Оформить";
         }
 
+        //контроль даты выезда
         private void DepartureDate_OnSelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             if (DepartureDate.SelectedDate < DateTime.Now) DepartureDate.SelectedDate = DateTime.Now.AddDays(1);
         }
 
+        //кнопка "Список всех записей"
         private void ViewBookBut_OnClick(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new AllBookingPage());

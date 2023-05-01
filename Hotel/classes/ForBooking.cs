@@ -1,6 +1,6 @@
 namespace Hotel.classes
 {
-    public class ForBooking
+    public static class ForBooking
     {
         public static string DataDepart = string.Empty;
         public static string DataArriv = string.Empty;

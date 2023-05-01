@@ -1,5 +1,4 @@
-﻿using System;
-namespace Hotel.classes
+﻿namespace Hotel.classes
 {
     internal abstract class WhichUserType
     {

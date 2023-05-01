@@ -2,26 +2,25 @@
 using System.IO;
 using System.Windows;
 using MySql.Data.MySqlClient;
-using Mysqlx.Crud;
 
 namespace Hotel.classes
 {
     public class BackUpSql
     {
-        public static void CreateBackUp(string DateNow)
+        public static void CreateBackUp(string dateNow)
         {
-            string _file = $"{Directory.GetCurrentDirectory()}\\BackUp\\{DateNow}.sql";
+            string file = $"{Directory.GetCurrentDirectory()}\\BackUp\\{dateNow}.sql";
             try
             {
-                using (MySqlConnection connection = new MySqlConnection(classes.MySql.ConStr))
+                using (MySqlConnection connection = new MySqlConnection(MySql.ConStr))
                 {
                     using (var command = new MySqlCommand())
                     {
-                        using (var _backUp = new MySqlBackup(command))
+                        using (var backUp = new MySqlBackup(command))
                         {
                             command.Connection = connection;
                             connection.Open();
-                            _backUp.ExportToFile(_file);
+                            backUp.ExportToFile(file);
                         }
                     }
                 }
